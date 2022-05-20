@@ -9,16 +9,21 @@
   <div id="app"></div>
   <template id="test">
     {{data}}
-    123
+    <div @click="btnClick">123</div>
   </template>
 
   <script src="../js/vue.js"></script>
   <script>
     Vue.createApp({
-      template: `#test`,
+      template: `#test`,  
       data: function() {
         return {
           data:456
+        }
+      },
+      methods: {
+        btnClick: function() {
+          console.log(this)
         }
       }
     }).mount("#app")
